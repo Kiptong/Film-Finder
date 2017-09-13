@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "nodemon server/server.js",
     "bundle": "browserify -d -t babelify index.js -o server/public/bundle.js"
   },
   "keywords": [],
@@ -17,8 +17,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babelify": "^7.3.0",
-    "browserify": "^14.4.0",
-    "nodemon": "^1.12.0"
+    "browserify": "^14.4.0"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
