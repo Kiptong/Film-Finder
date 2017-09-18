@@ -1,19 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const omdb = require('omdb')
+const MovieDb = require('moviedb')('2f9085506e44b48075c6783852500ab9')
 
 const app = express()
 
 app.use(bodyParser.json())
 
-app.post('/search/:term' , (req, res) => {
-  omdb.search(req.params.term, (error, movies) => {
+app.post('/search/:movie' , (req, res) => {
+  MovieDb.searchMovie({ query: req.params.movie }, (error, res) => {
     if (error) {
       return console.log(error)
     }
-    if (movies.length > 1) {
-      res.send(movies)
-    }
+    console.log(res)
   })
 })
 
